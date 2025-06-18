@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Remote Control</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Login Screen -->
+    <div id="loginScreen" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+            <h2 class="text-2xl font-bold mb-6 text-center">AC Remote Login</h2>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Remote Interface -->
+    <div id="remoteInterface" class="hidden">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-2xl font-bold">AC Remote Control</h1>
+                <button id="logoutBtn" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">Logout</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto">
+                <!-- Status Display -->
+                <div id="statusDisplay" class="bg-gray-100 p-4 rounded-lg mb-6 text-center">
+                    <p class="text-gray-600">Current Status: <span id="currentStatus">OFF</span></p>
+                    <p class="text-gray-600">Temperature: <span id="currentTemp">--°C</span></p>
+                </div>
+
+                <!-- Power Buttons -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <button class="power-btn bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700" data-command="on">ON</button>
+                    <button class="power-btn bg-red-600 text-white py-3 px-6 rounded-lg hover:bg-red-700" data-command="off">OFF</button>
+                </div>
+
+                <!-- Temperature Buttons -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="temp-btn bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700" data-temp="24">24°C</button>
+                    <button class="temp-btn bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700" data-temp="25">25°C</button>
+                    <button class="temp-btn bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700" data-temp="27">27°C</button>
+                    <button class="temp-btn bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700" data-temp="29">29°C</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

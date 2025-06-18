@@ -1,0 +1,41 @@
+/* Custom styles */
+.power-btn, .temp-btn {
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.power-btn:active, .temp-btn:active {
+    transform: scale(0.95);
+}
+
+#mqttStatus {
+    transition: all 0.3s ease;
+}
+
+#mqttStatus.connected {
+    background-color: #10B981;
+    color: white;
+}
+
+#mqttStatus.disconnected {
+    background-color: #EF4444;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .power-btn, .temp-btn {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+} 
